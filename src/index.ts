@@ -35,6 +35,14 @@ export default {
 
 		const url = new URL(request.url);
 
+		// Return early if path does not start with /api/echo
+		if (!url.pathname.startsWith("/api/echo")) {
+			return new Response(null, {
+				status: 404,
+				headers: headers as Record<string, string>,
+			});
+		}
+
 		// Clone the request to modify headers
 		const req = new Request(
 			`https://api.dune.com${url.pathname}${url.search}`,
