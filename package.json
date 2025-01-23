@@ -2,7 +2,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"deploy": "wrangler publish src/index.ts",
-		"dev": "wrangler dev src/index.ts --local",
+		"dev": "wrangler dev src/index.ts --local"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250121.0",
