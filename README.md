@@ -31,4 +31,3 @@ lock down your RPC proxy further, consider the following steps after you have su
 
 * Update the `Access-Control-Allow-Origin` header by adding a new variable with the key name `CORS_ALLOW_ORIGIN` to contain the host that your requests are coming from (usually your client application). For example, if you wanted to allow requests from `https://example.com`, you would change the header to `https://example.com`. To support multiple domains, set `CORS_ALLOW_ORIGIN` to a comma separated list of domains (e.g. `https://example.com,https://beta.example.com`).
 * [Cloudflare Web Application Firewall (WAF)](https://www.cloudflare.com/lp/ppc/waf-x/) - You can configure the WAF to inspect requests and allow/deny based on your own business logic.
-* Modify the IP address allow list in Helius for your API key to only accept connections from the Cloudflare ranges (https://cloudflare.com/ips-v4).
