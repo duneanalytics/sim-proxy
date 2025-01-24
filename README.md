@@ -22,11 +22,11 @@ Add a new variable with the key name `DUNE_API_KEY` and your Dune API key as the
 ### Step 4
 Refresh the page and confirm that your key is now saved and encrypted:
 
-You can now use your worker URL as an the RPC endpoint in all SDK and client side configurations without your API key leaking!
+You can now use your worker URL as an the base Dune API endpoint in all SDK and client side configurations without your API key leaking!
 
 # Additional Security Steps
 This implementation is intentionally left in a less-than-ideal security state to facilitate easy deployment by anyone. If you would like to
-lock down your RPC proxy further, consider the following steps after you have successfully deployed the worker:
+lock down your Dune Echo Proxy further, consider the following steps after you have successfully deployed the worker:
 
 
 * Update the `Access-Control-Allow-Origin` header by adding a new variable with the key name `CORS_ALLOW_ORIGIN` to contain the host that your requests are coming from (usually your client application). For example, if you wanted to allow requests from `https://example.com`, you would change the header to `https://example.com`. To support multiple domains, set `CORS_ALLOW_ORIGIN` to a comma separated list of domains (e.g. `https://example.com,https://beta.example.com`).
