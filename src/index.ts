@@ -1,13 +1,13 @@
 interface Env {
 	CORS_ALLOW_ORIGIN: string;
-	DUNE_API_KEY: string;
+	SIM_API_KEY: string;
 }
 
 export default {
 	async fetch(request: Request, env: Env) {
 		// If the request is an OPTIONS request, return a 200 response with permissive CORS headers
-		// This is required for the Dune Echo Proxy to work from the browser and arbitrary origins
-		// If you wish to restrict the origins that can access your Dune Echo Proxy, you can do so by
+		// This is required for the sim Proxy to work from the browser and arbitrary origins
+		// If you wish to restrict the origins that can access your sim Proxy, you can do so by
 		// changing the `*` in the `Access-Control-Allow-Origin` header to a specific origin.
 		// For example, if you wanted to allow requests from `https://example.com`, you would change the
 		// header to `https://example.com`. Multiple domains are supported by verifying that the request
@@ -39,7 +39,7 @@ export default {
 			...request,
 			headers: new Headers({
 				...Object.fromEntries(request.headers.entries()),
-				'x-dune-api-key': env.DUNE_API_KEY,
+				'X-Sim-Api-Key': env.SIM_API_KEY,
 			}),
 		});
 
