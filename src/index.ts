@@ -6,8 +6,8 @@ interface Env {
 export default {
 	async fetch(request: Request, env: Env) {
 		// If the request is an OPTIONS request, return a 200 response with permissive CORS headers
-		// This is required for the sim Proxy to work from the browser and arbitrary origins
-		// If you wish to restrict the origins that can access your sim Proxy, you can do so by
+		// This is required for the Sim Proxy to work from the browser and arbitrary origins
+		// If you wish to restrict the origins that can access your Sim Proxy, you can do so by
 		// changing the `*` in the `Access-Control-Allow-Origin` header to a specific origin.
 		// For example, if you wanted to allow requests from `https://example.com`, you would change the
 		// header to `https://example.com`. Multiple domains are supported by verifying that the request
